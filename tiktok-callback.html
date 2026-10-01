@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scrout · Connecting…</title>
+<style>body{font-family:system-ui,sans-serif;max-width:640px;margin:48px auto;padding:0 20px;line-height:1.6;color:#222}</style>
+</head><body>
+<p id="msg">Connecting…</p>
+<script>
+  // Paste the Apps Script web app URL here (it ends in /exec). This is the only line to edit.
+  var SHEET_WEB_APP = 'PASTE-WEB-APP-URL-HERE';
+
+  // TikTok sends the approver here with ?code=...&state=...; pass them straight on to the Sheet.
+  if (SHEET_WEB_APP.indexOf('https://script.google.com/') !== 0) {
+    document.getElementById('msg').textContent = 'Not set up yet: the Sheet address is missing from this page.';
+  } else {
+    window.location.replace(SHEET_WEB_APP + window.location.search);
+  }
+</script>
+</body></html>
